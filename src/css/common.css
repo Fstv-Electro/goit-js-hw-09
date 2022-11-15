@@ -16,3 +16,46 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.btn-clr {
+  text-transform: uppercase;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+}
+
+body {
+  font-size: 24px;
+  color: #212121;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100vw;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: teal;
+}
+
+.timer {
+  display: flex;
+  padding: 15px;
+  gap: 30px;
+  border: 2px solid black;
+}
+
+.field {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
