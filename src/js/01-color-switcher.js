@@ -14,12 +14,15 @@ startEl.addEventListener('click', () => {
     bodyEl.style.backgroundColor = `${getRandomHexColor()}`;
     startEl.disabled = true;
   }, 1000);
-  startEl.setAttribute('disabled', 'disabled');
-  stopEl.removeAttribute('disabled');
+  setRemoveAttribute(startEl, stopEl);
 });
 
 stopEl.addEventListener('click', () => {
   clearInterval(cycle);
-  stopEl.setAttribute('disabled', 'disabled');
-  startEl.removeAttribute('disabled');
+  setRemoveAttribute(stopEl, startEl);
 });
+
+function setRemoveAttribute(add, remove) {
+  add.setAttribute('disabled', 'disabled');
+  remove.removeAttribute('disabled');
+}

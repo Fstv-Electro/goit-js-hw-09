@@ -41,9 +41,12 @@ function timer() {
       Notiflix.Notify.success('success');
       return;
     }
-    convertTime(timeDifference);
+    const time = convertTime(timeDifference);
+    addTimeInterface(time);
   }, 1000);
 }
+
+startEl.removeEventListener('click', timer);
 
 function convertTime(ms) {
   const second = 1000;
@@ -56,6 +59,10 @@ function convertTime(ms) {
   const minutes = Math.floor(((ms % day) % hour) / minute);
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
+  return { days, hours, minutes, seconds };
+}
+
+function addTimeInterface({ days, hours, minutes, seconds }) {
   daysEl.textContent = days < 10 ? addZero(String(days)) : days;
   hoursEl.textContent = days < 10 ? addZero(String(hours)) : hours;
   minutesEl.textContent = days < 10 ? addZero(String(minutes)) : minutes;
